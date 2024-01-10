@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);// hooks should be created an initilize at top in the component, u can use the hook inside the compnent only
   function add(){
     return setCount(count+1);
   }
