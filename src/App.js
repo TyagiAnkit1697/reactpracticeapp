@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { useState } from 'react';
+
 
 function App() {
+  const [count, setCount] = useState(0);
+  function add(){
+    return setCount(count+1);
+  }
+  function sub(){
+    return (count!==0)?setCount(count-1):count;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className='box'>
+      <p>{count}</p>
+       <button className='add' onClick={add}>add</button> {/*we can also use anonomus function <button onClick={()=>setCount(count+1)}>add</button> */}
+       <button className='sub' onClick={sub}>sub</button>
+       <button className='reset' onClick={() => setCount(0)}>reset</button>                                     { /*<button onClick={()=>{return (count!==0)?setCount(count-1):count}}>sub</button> */}
     </div>
+    </>
+    
   );
 }
 
