@@ -16,7 +16,7 @@ function App() {
     <div className='App'>
       <h1>Task List</h1>
       <ul>
-      <button onClick={() => setShow(!show)} className='trigger'>Toggle</button>{/*to hide or show the list if true show, if false hide*/}
+      <button onClick={() => setShow(!show)} className='trigger'>Toggle</button>{/*to hide or show the list. if true show, if false hide*/}
         {show && tasks.map((task) => (
           <li key={task.id} className = {(task.isCompleted)?"completed":"incomplete"}>
             <span>{task.id} - {task.name}</span>
